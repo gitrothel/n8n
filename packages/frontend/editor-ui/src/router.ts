@@ -32,6 +32,7 @@ const MainHeader = async () => await import('@/components/MainHeader/MainHeader.
 const MainSidebar = async () => await import('@/components/MainSidebar.vue');
 const LogsPanel = async () => await import('@/features/logs/components/LogsPanel.vue');
 const DemoFooter = async () => await import('@/features/logs/components/DemoFooter.vue');
+const RodeoLandingView = async () => await import('./views/RodeoLandingView.vue');
 const NodeView = async () => await import('@/views/NodeView.vue');
 const WorkflowExecutionsView = async () => await import('@/views/WorkflowExecutionsView.vue');
 const WorkflowExecutionsLandingPage = async () =>
@@ -84,6 +85,14 @@ export const routes: RouteRecordRaw[] = [
 		redirect: '/home/workflows',
 		meta: {
 			middleware: ['authenticated'],
+		},
+	},
+	{
+		path: '/landing/rodeo',
+		name: VIEWS.RODEO_LANDING,
+		component: RodeoLandingView,
+		meta: {
+			middleware: [],
 		},
 	},
 	{
